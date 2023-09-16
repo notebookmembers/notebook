@@ -58,77 +58,44 @@
         dropDown.classList.toggle("open");
         dropDown_name.classList.toggle("show");
       };
-
+      // ------------------------------------------------------------------------------dropDown---------------------------------------------
       const subjectButtons = document.querySelectorAll(".subj_btn2");
-      const modules = document.querySelectorAll(".modules");
-
       const labButtons = document.querySelectorAll(".lab_btn2");
+      const modules = document.querySelectorAll(".modules");
       const lab = document.querySelectorAll(".lab");
 
-      subjectButtons.forEach((button, index) => {
-        button.addEventListener("click", function () {
-          // Toggle "showup" class on all .modules elements
-          modules.forEach((module, i) => {
-            if (i === index) {
-              module.classList.toggle("showup");
+      function toggleDropdown(buttons, elements, otherElements) {
+        buttons.forEach((button, index) => {
+          let isDropdownVisible = false;
 
-              // Calculate the position of the clicked button
-              const buttonRect = button.getBoundingClientRect();
+          button.addEventListener("click", () => {
+            elements.forEach((el, i) => {
+              const shouldToggle = i === index;
 
-              // Set the top position of the module dropdown
-              module.style.top = buttonRect.bottom + "px";
-            } else {
-              module.classList.remove("showup");
-            }
-          });
+              if (shouldToggle) {
+                if (!isDropdownVisible) {
+                  const buttonRect = button.getBoundingClientRect();
+                  el.style.top = buttonRect.bottom + "px";
+                }
 
-          lab.forEach((lab1, i) => {
-            if (i === index) {
-              lab1.classList.toggle("showup");
+                el.classList.toggle("showup");
+                isDropdownVisible = !isDropdownVisible;
+              } else {
+                el.classList.remove("showup");
+              }
+            });
 
-              // Calculate the position of the clicked button
-              const buttonRect = button.getBoundingClientRect();
-
-              // Set the top position of the module dropdown
-              lab1.style.top = buttonRect.bottom + "px";
-            } else {
-              lab1.classList.remove("showup");
-            }
+            // Close any open dropdowns in the otherElements
+            otherElements.forEach((el) => {
+              el.classList.remove("showup");
+            });
           });
         });
-      });
+      }
 
-      labButtons.forEach((button, index) => {
-        button.addEventListener("click", function () {
-          // Toggle "showup" class on all .modules elements
-          modules.forEach((module, i) => {
-            if (i === index) {
-              module.classList.toggle("showup");
-
-              // Calculate the position of the clicked button
-              const buttonRect = button.getBoundingClientRect();
-
-              // Set the top position of the module dropdown
-              module.style.top = buttonRect.bottom + "px";
-            } else {
-              module.classList.remove("showup");
-            }
-          });
-          lab.forEach((lab1, i) => {
-            if (i === index) {
-              lab1.classList.toggle("showup");
-
-              // Calculate the position of the clicked button
-              const buttonRect = button.getBoundingClientRect();
-
-              // Set the top position of the module dropdown
-              lab1.style.top = buttonRect.bottom + "px";
-            } else {
-              lab1.classList.remove("showup");
-            }
-          });
-        });
-      });
+      toggleDropdown(subjectButtons, modules, lab);
+      toggleDropdown(labButtons, lab, modules);
+      // ------------------------------------------------------------------------------dropDown---------------------------------------------
 
       const moduleLinks = document.querySelectorAll(".modules > li");
       const chapters = document.querySelectorAll(".chapters");
