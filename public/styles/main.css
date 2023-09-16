@@ -762,7 +762,56 @@ button:focus {
   margin-top: 0.5%;
   cursor: pointer;
 }
+/* _______________________lab manuel_________________ */
 
+.lab_btn2 {
+  font-family: "Inria Sans", sans-serif;
+  font-size: 1.9rem;
+  width: 80%;
+  background-color: white;
+  border: solid black;
+  border-radius: 15px;
+  padding: 1%;
+  text-align: center;
+  margin-top: 1.5%;
+  box-shadow: 0 8px #999;
+}
+
+.lab_btn2:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.lab {
+  display: none;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1%;
+}
+.lab li {
+  justify-content: center;
+  text-align: center;
+  font-family: "Inria Sans", sans-serif;
+  font-size: 1.9rem;
+  color: black;
+  background-color: white;
+  border: solid black;
+  border-radius: 15px;
+  list-style: none;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 0.5%;
+  cursor: pointer;
+}
+
+.lab li:hover {
+  background-color: black;
+  color: white;
+}
+.modules .lab-manual:hover {
+  border-radius: 15px;
+  background-color: black;
+  color: #ffffff;
+}
 .showup {
   display: block;
 }

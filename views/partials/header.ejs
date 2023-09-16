@@ -62,6 +62,9 @@
       const subjectButtons = document.querySelectorAll(".subj_btn2");
       const modules = document.querySelectorAll(".modules");
 
+      const labButtons = document.querySelectorAll(".lab_btn2");
+      const lab = document.querySelectorAll(".lab");
+
       subjectButtons.forEach((button, index) => {
         button.addEventListener("click", function () {
           // Toggle "showup" class on all .modules elements
@@ -76,6 +79,52 @@
               module.style.top = buttonRect.bottom + "px";
             } else {
               module.classList.remove("showup");
+            }
+          });
+
+          lab.forEach((lab1, i) => {
+            if (i === index) {
+              lab1.classList.toggle("showup");
+
+              // Calculate the position of the clicked button
+              const buttonRect = button.getBoundingClientRect();
+
+              // Set the top position of the module dropdown
+              lab1.style.top = buttonRect.bottom + "px";
+            } else {
+              lab1.classList.remove("showup");
+            }
+          });
+        });
+      });
+
+      labButtons.forEach((button, index) => {
+        button.addEventListener("click", function () {
+          // Toggle "showup" class on all .modules elements
+          modules.forEach((module, i) => {
+            if (i === index) {
+              module.classList.toggle("showup");
+
+              // Calculate the position of the clicked button
+              const buttonRect = button.getBoundingClientRect();
+
+              // Set the top position of the module dropdown
+              module.style.top = buttonRect.bottom + "px";
+            } else {
+              module.classList.remove("showup");
+            }
+          });
+          lab.forEach((lab1, i) => {
+            if (i === index) {
+              lab1.classList.toggle("showup");
+
+              // Calculate the position of the clicked button
+              const buttonRect = button.getBoundingClientRect();
+
+              // Set the top position of the module dropdown
+              lab1.style.top = buttonRect.bottom + "px";
+            } else {
+              lab1.classList.remove("showup");
             }
           });
         });
