@@ -831,9 +831,7 @@ button:focus {
   .modules {
     margin-top: 2.3%;
   }
-  .chapters {
-    padding-left: 15px;
-  }
+
   .lab_btn2,
   .subj_btn2 {
     font-size: 1.4rem;
@@ -847,14 +845,16 @@ button:focus {
   }
 
   .modules li a {
+    text-align: center;
     border-radius: 7px;
     font-size: 1.3rem;
   }
   .lab li,
   .modules li {
+    width: 70%;
     border-radius: 8px;
     font-size: 1.4rem;
-    margin-left: 18%;
+    margin-left: 12%;
   }
 }
 
@@ -866,14 +866,12 @@ button:focus {
   .lab li,
   .modules li {
     font-size: 1.3rem;
-    margin-left: 17%;
+    margin-left: 10%;
   }
-  .chapters {
-    padding-left: 12px;
-  }
+
   .modules li a {
     border-radius: 2px;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .lab_btn2,
   .subj_btn2 {
