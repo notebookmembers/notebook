@@ -747,10 +747,11 @@ button:focus {
     }
     color: blue;
   } */
-
+.chapters {
+  padding-left: 20px;
+}
 .clickshow {
   display: block;
-  padding-left: 20px;
 }
 .modules li {
   justify-content: center;
@@ -826,10 +827,14 @@ button:focus {
 }
 
 @media (max-width: 750px) {
+  .lab,
   .modules {
-    margin-top: 2%;
+    margin-top: 2.3%;
   }
-
+  .chapters {
+    padding-left: 15px;
+  }
+  .lab_btn2,
   .subj_btn2 {
     font-size: 1.4rem;
     margin-top: 3.2%;
@@ -840,42 +845,39 @@ button:focus {
     border-color: white;
     border-radius: 15px;
   }
-  .clickshow {
-    padding-left: 20px;
-  }
+
   .modules li a {
     border-radius: 7px;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
+  .lab li,
   .modules li {
     border-radius: 8px;
-    font-size: 1.2rem;
-    margin-left: 18%;
-  }
-  .subj_btn2 {
     font-size: 1.4rem;
+    margin-left: 18%;
   }
 }
 
 @media (max-width: 420px) {
-  .subj_btn2 {
-    font-size: 1.1rem;
-    border-radius: 10px;
-  }
-
+  .lab,
   .modules {
     margin-top: 3.5%;
   }
+  .lab li,
   .modules li {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-left: 17%;
   }
-
+  .chapters {
+    padding-left: 12px;
+  }
   .modules li a {
     border-radius: 2px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
+  .lab_btn2,
   .subj_btn2 {
+    border-radius: 10px;
     font-size: 1.4rem;
     margin-top: 3.2%;
   }
