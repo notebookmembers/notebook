@@ -375,7 +375,7 @@ header {
 @media (max-width: 550px) {
   .features a {
     font-size: 1.4rem;
-    width: 50%;
+    width: 60%;
     padding: 18px;
   }
 }
