@@ -174,11 +174,11 @@ header {
   }
 }
 /* ___________________________________main page _______________________________ */
-.head {
+.head_notes {
   font-family: "Inria Sans", sans-serif;
   font-weight: 600;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   margin-top: 2%;
 }
 .yrcon {
@@ -229,7 +229,7 @@ header {
   color: white;
 }
 @media (max-width: 650px) {
-  .head {
+  .head_notes {
     font-weight: 600;
     font-size: 28px;
   }
@@ -263,7 +263,7 @@ header {
   .yrcon {
     padding-top: 15px;
   }
-  .head {
+  .head_notes {
     font-weight: 600;
     font-size: 23px;
   }
@@ -291,7 +291,10 @@ header {
   font-weight: 400;
   font-size: 25px;
 }
-
+.announcements a {
+  text-decoration: underline;
+  color: rgb(108, 108, 108);
+}
 @media (max-width: 420px) {
   .announcements {
     font-size: 20px;
