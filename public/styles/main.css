@@ -312,10 +312,6 @@ header {
 
 /* _____________Other features_____________________ */
 
-.features-body {
-  text-align: center;
-}
-
 .features {
   display: flex;
   justify-content: center;
@@ -340,7 +336,6 @@ header {
   background: linear-gradient(45deg, grey, black, grey, black);
   background-size: 600% 600%;
   animation: gradientAnimation 10s ease infinite;
-  z-index: -1;
   border-radius: 10px;
   font-weight: 300;
 }
