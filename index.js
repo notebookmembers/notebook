@@ -9,6 +9,9 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
   res.render("index.ejs");
 });
+app.get("/sitemap.xml", function (req, res) {
+  res.render("sitemap.xml");
+});
 //<!-----------------------------------------------------get pagesss---------------------------------------------------!>
 app.get("/1styear", function (req, res) {
   res.render("1st/1styear.ejs");
