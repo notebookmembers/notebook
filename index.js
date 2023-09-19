@@ -1,5 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 const jsonData = JSON.stringify(Object);
 
 const app = express();
@@ -9,8 +11,16 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
   res.render("index.ejs");
 });
-app.get("/sitemap.xml", function (req, res) {
-  res.render("sitemap.xml");
+// -----------------------------------------------------------sitemap--------------------------------------------------
+const currentDir = dirname(fileURLToPath(import.meta.url));
+// Get the current directory path
+
+app.get("/sitemap.xml", (req, res) => {
+  // Set the Content-Type header to specify that you are sending XML
+  res.set("Content-Type", "application/xml");
+
+  // Construct the absolute path to 'sitemap.xml' and send the file as the response
+  res.sendFile(`${currentDir}/sitemap.xml`);
 });
 //<!-----------------------------------------------------get pagesss---------------------------------------------------!>
 app.get("/1styear", function (req, res) {
@@ -36,6 +46,7 @@ app.get("/2nd_4th_sem_cs", function (req, res) {
   res.render("2nd/4th_sem/cs.ejs");
 });
 //------------------------------------------------post---------------------------------------------------
+
 // ----------------------1st year---------------------------------
 app.get("/c_cycle", function (req, res) {
   res.render("1st/ccycle.ejs");
