@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { dirname } from "path";
 import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 const jsonData = JSON.stringify(Object);
 
 const app = express();
@@ -22,6 +22,18 @@ app.get("/sitemap.xml", (req, res) => {
   // Construct the absolute path to 'sitemap.xml' and send the file as the response
   res.sendFile(`${currentDir}/sitemap.xml`);
 });
+// -----------------------------------------------------
+app.get("/sitemap.html", (req, res) => {
+  // Set the Content-Type header to specify that you are sending HTML
+  res.set("Content-Type", "text/html");
+
+  // Construct the absolute path to 'sitemap.html'
+  const filePath = join(currentDir, "sitemap.html");
+
+  // Send the HTML file as the response
+  res.sendFile(filePath);
+});
+
 //<!-----------------------------------------------------get pagesss---------------------------------------------------!>
 app.get("/1styear", function (req, res) {
   res.render("1st/1styear.ejs");
