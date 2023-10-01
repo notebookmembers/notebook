@@ -1199,3 +1199,12 @@ html {
     font-size: 0.9rem;
   }
 }
+.preloader {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 999999;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
