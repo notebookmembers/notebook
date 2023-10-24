@@ -11,6 +11,7 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
   res.render("index.ejs");
 });
+
 // -----------------------------------------------------------sitemap--------------------------------------------------
 const currentDir = dirname(fileURLToPath(import.meta.url));
 // Get the current directory path
@@ -21,6 +22,13 @@ app.get("/sitemap.xml", (req, res) => {
 
   // Construct the absolute path to 'sitemap.xml' and send the file as the response
   res.sendFile(`${currentDir}/sitemap.xml`);
+});
+app.get("/robots.txt", (req, res) => {
+  // Set the Content-Type header to specify that you are sending XML
+  res.set("Content-Type", "application/xml");
+
+  // Construct the absolute path to 'sitemap.xml' and send the file as the response
+  res.sendFile(`${currentDir}/robots.txt`);
 });
 // -----------------------------------------------------
 app.get("/sitemap.html", (req, res) => {
