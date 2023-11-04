@@ -1,47 +1,32 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+import { dirname } from "path";
 const jsonData = JSON.stringify(Object);
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
-// -----------------------------------------------------------sitemap--------------------------------------------------
-const currentDir = dirname(fileURLToPath(import.meta.url));
-// Get the current directory path
+// -----------------------------------------------------------SEO--------------------------------------------------
 
 app.get("/sitemap.xml", (req, res) => {
-  // Set the Content-Type header to specify that you are sending XML
-  res.set("Content-Type", "application/xml");
-
-  // Construct the absolute path to 'sitemap.xml' and send the file as the response
-  res.sendFile(`${currentDir}/sitemap.xml`);
+  res.sendFile(__dirname + "/sitemap.xml");
 });
-app.get("/robots.txt", (req, res) => {
-  // Set the Content-Type header to specify that you are sending XML
-  res.set("Content-Type", "application/xml");
-
-  // Construct the absolute path to 'sitemap.xml' and send the file as the response
-  res.sendFile(`${currentDir}/robots.txt`);
-});
-// -----------------------------------------------------
 app.get("/sitemap.html", (req, res) => {
-  // Set the Content-Type header to specify that you are sending HTML
-  res.set("Content-Type", "text/html");
-
-  // Construct the absolute path to 'sitemap.html'
-  const filePath = join(currentDir, "sitemap.html");
-
-  // Send the HTML file as the response
-  res.sendFile(filePath);
+  res.sendFile(__dirname + "/sitemap.html");
 });
 
+app.get("/robots.txt", (req, res) => {
+  res.sendFile(__dirname + "/robots.txt");
+});
+//----------------------------------------------------------------------------------------------------------------------
 //<!-----------------------------------------------------get pagesss---------------------------------------------------!>
 app.get("/1styear", function (req, res) {
   res.render("1st/1styear.ejs");
