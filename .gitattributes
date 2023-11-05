@@ -1,2 +1,32 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# EJS compiled files (assuming *.ejs is the source file extension)
+*.ejs.map
+
+# Log files
+logs/
+*.log
+debug.log
+
+# Environment files (if applicable)
+.env
+
+# OS-specific files and directories
+.DS_Store
+Thumbs.db
+
+# Output directories
+dist/
+out/
+
+# Dependency lock files (if applicable)
+yarn.lock
+package-lock.json
+
+# Ignore .gitignore itself
+!.gitignore

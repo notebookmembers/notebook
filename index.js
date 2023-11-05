@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-const jsonData = JSON.stringify(Object);
+// const jsonData = JSON.stringify(Object);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -50,7 +50,6 @@ app.get("/contact", function (req, res) {
 app.get("/2nd_4th_sem_cs", function (req, res) {
   res.render("2nd/4th_sem/cs.ejs");
 });
-//------------------------------------------------post---------------------------------------------------
 
 // ----------------------1st year---------------------------------
 app.get("/c_cycle", function (req, res) {
@@ -59,9 +58,9 @@ app.get("/c_cycle", function (req, res) {
 app.get("/p_cycle", (req, res) => {
   res.render("1st/pcycle.ejs");
 });
-const subjects = ["cs", "ec", "is", "eee", "mech", "cv", "ei"];
 
 //--------------------2 year-----------------------------------
+const subjects = ["cs", "ec", "is", "eee", "mech", "cv", "ei"];
 
 subjects.forEach((subject) => {
   app.get(`/3rd_sem_${subject}`, (req, res) => {
